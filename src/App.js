@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import { QuestionCard } from './Compnents/QuestionCard';
 
-function App() {
+
+const App = () => {
+  const [uName, setUname] = useState()
+  const [questionState, setQuestionState] = useState(true)
+
+  let userName;
+  useEffect(() => {
+    userName = prompt("Please tell your name")
+    setUname(userName)
+
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="main">
+        <h1>Quiz App </h1>
+        <h2>Welcome {uName}</h2>
+        {questionState === true ? <button onClick={()=>setQuestionState(false)}>Start Quiz</button>
+          : <QuestionCard />
+        }</div>
     </div>
   );
 }
