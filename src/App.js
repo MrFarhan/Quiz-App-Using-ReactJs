@@ -18,9 +18,9 @@ const App = () => {
     <div className="App">
       <div className="main">
         <h1>Quiz App </h1>
-        <h2>Welcome {uName}</h2>
+        {/* <h2>Welcome {uName}</h2> */}
         {questionState === true ? <button onClick={()=>setQuestionState(false)}>Start Quiz</button>
-          : <QuestionCard />
+          :<QuestionCard userName={uName}/>
         }</div>
     </div>
   );
