@@ -1,8 +1,7 @@
 import React from 'react'
 
 export const FinalScore = ({ score, userName }) => {
-    let ops;
-    let congrats;
+
     return (
         <div>
             

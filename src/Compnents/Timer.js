@@ -1,13 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
 export const Timer = ({ timerVal }) => {
-
-    // const [time, UpdateTime] = useState(5)
-
-
-
-
-    // console.log(time, "time")
     
     return (
         <div>

@@ -9,11 +9,9 @@ export const QuestionCard = ({ userName }) => {
     let questions = [{ question: "Who is the president of Pakistan", options: ["Quaid e Azam", "Liaqat Ali", "Muhammad Ali", "Jinnah Poonja"], correctAns: "Quaid e Azam" }, { question: "Who is the president of India", options: ["Nehru", "Gandhi", "Verath", "Sachin"], correctAns: "Gandhi" }, { question: "Who is the president of USA", options: ["Farhan", "Rehan", "Ali", "farooq"], correctAns: "Farhan" }, { question: "Who is the president of UAE", options: ["King", "Queen", "New", "Old"], correctAns: "King" }];
     const [currentQuestionIndex, updateCurrentQuestionIndex] = useState(0)
     const [score, updateScore] = useState(0)
-    const [isSelected, updateIsSelected] = useState()
     const [radioInput, setRadioInput] = useState(false);
     const [finalScore, setFinalScore] = useState(true)
     const [timer, setTimer] = useState(5);
-    // const [timerFunc, setTimerFunc] = useState()
     const [interval, updateInterval] = useState();
 
 
@@ -25,8 +23,6 @@ export const QuestionCard = ({ userName }) => {
                 setTimer(5)
                 clearInterval(interval)
                 setRadioInput(false)
-                // add if checked any option then setTimer(5)
-
 
                 if (questions[currentQuestionIndex].correctAns === radioInput) {
                     updateScore(score + 1)
@@ -39,7 +35,6 @@ export const QuestionCard = ({ userName }) => {
             }
             clearInterval(interval)
             setFinalScore(false)
-            // alert(`quiz finished and your score is ${score}`)
             setRadioInput(false)
         }
     }
@@ -49,19 +44,9 @@ export const QuestionCard = ({ userName }) => {
         setRadioInput(event.target.value)
     }
 
-    // const timerVal = (time, updateTime) => {
-    //     console.log(time, "timerval console11111")
-    //     setTimer(time)
-    //     console.log(timer, "timer ")
-    //     // setTimerFunc(updateTime)
-    //     console.log(updateTime(5), "update timeeee")
-    // }
-
-
     useEffect(() => {
         if (timer === 0 && currentQuestionIndex < questions.length - 1) {
             updateCurrentQuestionIndex(currentQuestionIndex + 1)
-            // timerFunc(5)
             clearInterval(interval)
             setTimer(5)
         }
@@ -81,7 +66,6 @@ export const QuestionCard = ({ userName }) => {
                 console.log(prev, "prev")
                 return --prev
             })
-            // debugger;
         }, 1000);
         updateInterval(temp)
         console.log(interval, "intervallll");
@@ -104,9 +88,6 @@ export const QuestionCard = ({ userName }) => {
                 <button onClick={() => Next()}>Next</button></div> :
                 <FinalScore score={score} userName={userName} />
             }
-
-
-            {/* currentQuestionIndex !== questions.length - 1 ? updateCurrentQuestionIndex(currentQuestionIndex + 1) : console.log("user clicked") */}
         </div >
     )
 }
