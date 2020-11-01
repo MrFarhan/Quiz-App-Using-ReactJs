@@ -7,12 +7,12 @@ const App = () => {
   const [uName, setUname] = useState()
   const [questionState, setQuestionState] = useState(true)
 
-  let userName;
-  useEffect(() => {
-    userName = prompt("Please tell your name")
-    setUname(userName)
+  // let userName;
+  // useEffect(() => {
+  //   userName = prompt("Please tell your name")
+  //   setUname(userName)
 
-  }, [])
+  // }, [])
 
   return (
     <div className="App">

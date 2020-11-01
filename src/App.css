@@ -22,3 +22,8 @@ label {
 input[type="radio"] {
   margin: 5px 10px 0 10em;
 }
+
+
+.timer{
+  margin-left: 21em;
+  margin-top: -0.5em;}
