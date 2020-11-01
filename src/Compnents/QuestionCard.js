@@ -55,7 +55,7 @@ export const QuestionCard = ({ userName }) => {
             setFinalScore(false)
         }
 
-    }, [timer])
+    }, [timer,currentQuestionIndex,interval, questions.length])
 
 
     useEffect(() => {
@@ -69,7 +69,7 @@ export const QuestionCard = ({ userName }) => {
         }, 1000);
         updateInterval(temp)
         console.log(interval, "intervallll");
-    }, [currentQuestionIndex])
+    }, [currentQuestionIndex, interval, timer])
 
     return (
         <div >
