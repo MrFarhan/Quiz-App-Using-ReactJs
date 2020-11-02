@@ -54,14 +54,13 @@ export const QuestionCard = ({ userName }) => {
             clearInterval(interval)
             setFinalScore(false)
         }
-
-    }, [timer,currentQuestionIndex,interval, questions.length])
-
+        // eslint-disable-next-line
+    }, [timer])
 
     useEffect(() => {
         let temp = setInterval(() => {
             console.log(timer, "timer in useEffect")
-
+            
             setTimer(prev => {
                 console.log(prev, "prev")
                 return --prev
@@ -69,7 +68,8 @@ export const QuestionCard = ({ userName }) => {
         }, 1000);
         updateInterval(temp)
         console.log(interval, "intervallll");
-    }, [currentQuestionIndex, interval, timer])
+        // eslint-disable-next-line
+    }, [currentQuestionIndex])
 
     return (
         <div >
