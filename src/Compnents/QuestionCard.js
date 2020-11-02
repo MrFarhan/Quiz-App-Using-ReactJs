@@ -11,7 +11,7 @@ export const QuestionCard = ({ userName }) => {
     const [score, updateScore] = useState(0)
     const [radioInput, setRadioInput] = useState(false);
     const [finalScore, setFinalScore] = useState(true)
-    const [timer, setTimer] = useState(5);
+    const [timer, setTimer] = useState(20);
     const [interval, updateInterval] = useState();
 
 
@@ -20,7 +20,7 @@ export const QuestionCard = ({ userName }) => {
 
             if (radioInput) {
                 updateCurrentQuestionIndex(currentQuestionIndex + 1)
-                setTimer(5)
+                setTimer(20)
                 clearInterval(interval)
                 setRadioInput(false)
 
@@ -48,7 +48,7 @@ export const QuestionCard = ({ userName }) => {
         if (timer === 0 && currentQuestionIndex < questions.length - 1) {
             updateCurrentQuestionIndex(currentQuestionIndex + 1)
             clearInterval(interval)
-            setTimer(5)
+            setTimer(20)
         }
         else if (timer === 0) {
             clearInterval(interval)
